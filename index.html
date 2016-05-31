@@ -1,1 +1,33 @@
-<html>Hello World!</html>
+<html>
+Spark API Test Page
+
+<script>
+function postMessage() {
+  var data = JSON.stringify({
+  'roomId': 'Y2lzY29zcGFyazovL3VzL1JPT00vODU5M2E5ZjAtZDJlYy0xMWU1LWFhMWQtZDM1MTA2MTI4NTky',
+  'file': 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Youngkitten.JPG/193px-Youngkitten.JPG',
+  'text': 'Hello World!'
+});
+
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+
+xhr.addEventListener('readystatechange', function () {
+  if (this.readyState === 4) {
+    console.log(this.responseText);
+  }
+});
+
+xhr.open('POST', 'https://api.ciscospark.com/v1/messages');
+xhr.setRequestHeader('authorization', 'Bearer ZTgyY2VhYjQtYTBkYi00NjJlLWExOGQtMTc5OWMzOGJlZTliOWM5YzFkNTItM2Zl');
+xhr.setRequestHeader('content-type', 'application/json');
+xhr.setRequestHeader('cache-control', 'no-cache');
+xhr.setRequestHeader('postman-token', '250b4020-4cec-adfc-403c-87c74d0bda3e');
+
+xhr.send(data);
+}
+</script>
+
+<button onClick="postMessage()">Click me</button>
+
+</html>
