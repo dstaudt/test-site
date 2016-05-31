@@ -19,8 +19,8 @@ xhr.addEventListener('readystatechange', function () {
 });
 
 xhr.open('POST', 'https://api.ciscospark.com/v1/messages');
-xhr.setRequestHeader('authorization', 'Bearer ZTgyY2VhYjQtYTBkYi00NjJlLWExOGQtMTc5OWMzOGJlZTliOWM5YzFkNTItM2Zl');
-xhr.setRequestHeader('content-type', 'application/json');
+xhr.setRequestHeader('Authorization', 'Bearer ZTgyY2VhYjQtYTBkYi00NjJlLWExOGQtMTc5OWMzOGJlZTliOWM5YzFkNTItM2Zl');
+xhr.setRequestHeader('Content-Type', 'application/json');
 
 xhr.send(data);
 }
